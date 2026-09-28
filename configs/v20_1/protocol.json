@@ -1,0 +1,93 @@
+{
+  "schema_version": "5.1",
+  "protocol_id": "laketrace-v20.1-3d-axis-run-v1",
+  "parent_protocol_id": "laketrace-v20-3d-single-edge-v1",
+  "condition": "static_F1",
+  "movement": {
+    "adjacency": "six_axis_aligned_native_grid",
+    "command": "flat_direction_and_steps",
+    "min_edges_per_action": 1,
+    "max_edges_per_action": 32,
+    "measure_on_every_arrival": true,
+    "arrival_measurement_mode": "transit",
+    "dwell_s_applied": false,
+    "partial_prefix_on_interrupt": true
+  },
+  "intervention": {
+    "events": [
+      "segment_complete",
+      "native_boundary",
+      "physical_budget_unaffordable",
+      "submit_only",
+      "explicit_analyze",
+      "explicit_submit"
+    ],
+    "sensor_value_triggers": false,
+    "revisit_triggers": false,
+    "automatic_path_planning": false
+  },
+  "memory": {
+    "append_only_sample_ledger": true,
+    "exact_3d_visited_mask": true,
+    "cross_phase_averaging": false,
+    "measurement_time_name": "measurement_age_s",
+    "last_route_measurements_lossless": true,
+    "unvisited_value_policy": "never_expose_or_interpolate"
+  },
+  "candidate_presentation": {
+    "catalog": "public_task_union_by_domain",
+    "catalog_counts": {
+      "dahuofang": 23,
+      "donghu": 19,
+      "xingkai_large": 26,
+      "xingkai_small": 22
+    },
+    "catalog_sha256": {
+      "dahuofang": "2b80efce313077816b179f9bdebc786de59596cdd09fcb1d75e3713d0a9ad4bb",
+      "donghu": "462685f9f45dec40b2261a5f965fdcaa5a205ee3fbe74bfcdfed951d7f042ea0",
+      "xingkai_large": "1caaac442f3a5c401099c1e6f18b51d6856e9b94f4840c4c7336ad78a206ee73",
+      "xingkai_small": "9773d9b1c06c82eeb9bc8d8bdfdfb58be1a74a2420b8c3881e5dde050ed139d6"
+    },
+    "ordering": "inherit_parent_frozen_order",
+    "ordering_protocol_id": "laketrace-v20-3d-single-edge-v1",
+    "rank_has_priority": false
+  },
+  "termination": {
+    "physical_endurance_and_range_are_scientific_limits": true,
+    "provider_round_guard": 7201,
+    "active_consecutive_invalid_limit": 3,
+    "submit_only_schema_retries": 3,
+    "repetition_is_diagnostic_only": true,
+    "final_submit_is_budget_free": true
+  },
+  "analysis": {
+    "physical_cost_s": 30.0,
+    "cost_basis": "registered_v4_analysis_duration",
+    "scope": "agent_measured_samples_only"
+  },
+  "sensor_noise": {
+    "flow_sigma_m_s": 0.0025,
+    "transit_multiplier": 3.0,
+    "water_quality_sigma": "detection_limit_divided_by_3",
+    "randomization": "inherit_parent_counter_seed_for_physical_parity",
+    "randomization_protocol_id": "laketrace-v20-3d-single-edge-v1"
+  },
+  "observation": {
+    "cumulative_state": "hierarchical_measured_map_v1",
+    "last_route_measurements": "lossless_ordered_measured_only",
+    "payload_ceiling_utf8_bytes": 36000,
+    "over_limit_policy": "stop_before_provider_request"
+  },
+  "decision_record": {
+    "required": true,
+    "fed_back_to_agent": false,
+    "fields": [
+      "intent",
+      "evidence_node_ids_csv",
+      "confidence",
+      "decision_note"
+    ]
+  },
+  "neighbor_values_visible": false,
+  "temperature": 1.0
+}

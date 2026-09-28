@@ -1,0 +1,28 @@
+{
+  "access_points": {
+    "dahuofang": {
+      "waterbody": "dahuofang",
+      "x": 5.0,
+      "y": -130.0,
+      "z": 1.0
+    },
+    "donghu": {
+      "waterbody": "donghu",
+      "x": 0.738,
+      "y": 1.365,
+      "z": 1.0
+    },
+    "xingkai_large": {
+      "waterbody": "xingkai",
+      "x": 102.739,
+      "y": 87.673,
+      "z": 0.5
+    },
+    "xingkai_small": {
+      "waterbody": "xingkai",
+      "x": -73.695,
+      "y": 135.855,
+      "z": 0.5
+    }
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "episodes": 288,
+  "tasks": 48,
+  "positive_tasks": 36,
+  "negative_tasks": 12,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "replay_pass": true,
+  "calls_per_episode": 19,
+  "source_files": [
+    "results/baselines/ade_v22_two_policy_seed0_2026-09-28_r1",
+    "results/baselines/ade_v22_two_policy_seed1_2026-09-28_r1",
+    "results/baselines/ade_v22_two_policy_seed2_2026-09-28_r1"
+  ],
+  "data_hashes": {
+    "scripts/run_three_waterbody_ade_policies.py": "a6d588bf34e711887b437afba337437ee56ce3880641bdb8a3526869f2cc984f",
+    "laketrace/baselines/field_reference.py": "4327530466ebac1d6231c833d872d6404beb038ed7c6ed4bae6b1cce41ba4cf9",
+    "configs/investigation/three_waterbody_v22_survey_v6.json": "538baf48b75e63400e3a422c335fd7c595c73958933b0948e8a8cc3e975e175d",
+    "data/three_waterbody_candidate_v22/tasks/instances.jsonl": "19dda884e6632d3748325447c36c9b5e0df8e42de35df6a9cf6c61a68eada741",
+    "data/three_waterbody_candidate_v22/truth/exam_truth.jsonl": "6b0e90cab5f208462e4f2dc3dc624e5785c4695c267dfa27c9fd501a36c00d86"
+  },
+  "policies": {
+    "systematic": {
+      "episodes": 144,
+      "positive_episodes": 108,
+      "L2_correct": 78,
+      "L2_rate": 0.7222222222222222,
+      "L4_correct": 57,
+      "L4_rate": 0.5277777777777778,
+      "mean_samples_all": 1278.3333333333333,
+      "mean_unique_nodes_all": 1259,
+      "mean_distance_m_all": 6573.79150000004,
+      "mean_movement_actions_all": 69.5,
+      "by_seed": {
+        "0": {
+          "L4_correct": 19,
+          "L2_correct": 26
+        },
+        "1": {
+          "L4_correct": 19,
+          "L2_correct": 26
+        },
+        "2": {
+          "L4_correct": 19,
+          "L2_correct": 26
+        }
+      },
+      "by_waterbody": {
+        "dahuofang": {
+          "positive": 36,
+          "L4_correct": 18
+        },
+        "donghu": {
+          "positive": 36,
+          "L4_correct": 12
+        },
+        "xingkai": {
+          "positive": 36,
+          "L4_correct": 27
+        }
+      },
+      "by_mechanism": {
+        "external_diffuse": {
+          "positive": 36,
+          "L4_correct": 27
+        },
+        "external_point": {
+          "positive": 36,
+          "L4_correct": 0
+        },
+        "internal_release": {
+          "positive": 18,
+          "L4_correct": 18
+        },
+        "physical_resuspension": {
+          "positive": 18,
+          "L4_correct": 12
+        }
+      }
+    },
+    "adaptive": {
+      "episodes": 144,
+      "positive_episodes": 108,
+      "L2_correct": 92,
+      "L2_rate": 0.8518518518518519,
+      "L4_correct": 64,
+      "L4_rate": 0.5925925925925926,
+      "mean_samples_all": 1209.0416666666667,
+      "mean_unique_nodes_all": 1196.9722222222222,
+      "mean_distance_m_all": 6191.457250000035,
+      "mean_movement_actions_all": 68.53472222222223,
+      "by_seed": {
+        "0": {
+          "L4_correct": 22,
+          "L2_correct": 30
+        },
+        "1": {
+          "L4_correct": 21,
+          "L2_correct": 30
+        },
+        "2": {
+          "L4_correct": 21,
+          "L2_correct": 32
+        }
+      },
+      "by_waterbody": {
+        "dahuofang": {
+          "positive": 36,
+          "L4_correct": 23
+        },
+        "donghu": {
+          "positive": 36,
+          "L4_correct": 18
+        },
+        "xingkai": {
+          "positive": 36,
+          "L4_correct": 23
+        }
+      },
+      "by_mechanism": {
+        "external_diffuse": {
+          "positive": 36,
+          "L4_correct": 27
+        },
+        "external_point": {
+          "positive": 36,
+          "L4_correct": 8
+        },
+        "internal_release": {
+          "positive": 18,
+          "L4_correct": 18
+        },
+        "physical_resuspension": {
+          "positive": 18,
+          "L4_correct": 11
+        }
+      }
+    }
+  },
+  "paired_L4": {
+    "both_correct": 50,
+    "systematic_only": 7,
+    "adaptive_only": 14,
+    "both_wrong": 37,
+    "adaptive_minus_systematic": 0.06481481481481481,
+    "task_cluster_bootstrap_95pct": [
+      -0.07407407407407407,
+      0.2037037037037037
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": "5.3",
+  "protocol_id": "laketrace-v20.3-closed-loop-3d-v1",
+  "parent_protocol_id": "laketrace-v20.2-resource-bounded-3d-v1",
+  "physics_protocol_id": "laketrace-v20-3d-single-edge-v1",
+  "condition": "static_F1",
+  "movement": {
+    "adjacency": "six_axis_aligned_native_grid",
+    "commands": ["goto", "move_one"],
+    "goto_path_rule": "shortest_reachable_geometry_only_bfs",
+    "goto_tie_break_direction_order": ["up", "down", "east", "west", "north", "south"],
+    "goto_max_edges_per_action": 32,
+    "measure_on_every_arrival": true,
+    "sensor_triggered_stop": false
+  },
+  "resource_control": {
+    "stage_signal_allowlist": ["endurance_fraction", "successful_action_count", "known_public_price_cost"],
+    "stage_signal_denylist": ["sensor_value", "gradient", "anomaly_threshold", "candidate_distance", "score", "truth"],
+    "refine_endurance_fraction": 0.70,
+    "submit_only_endurance_fraction": 0.90,
+    "max_successful_active_actions": 96,
+    "provider_call_hard_guard": 384,
+    "repairs_per_decision_point": 3,
+    "final_submission_is_budget_free": true
+  },
+  "memory": {
+    "model_owned_scratchpad_max_chars": 2048,
+    "harness_injection_forbidden": true,
+    "returned_verbatim_next_round": true
+  },
+  "submission": {
+    "independent_level_tools": true,
+    "levels": ["L1", "L2", "L3", "L4", "L5"],
+    "explicit_finalize": true,
+    "max_updates_per_level": 2,
+    "missing_level_scores_zero": true
+  },
+  "analysis": {
+    "action_removed": true,
+    "measured_only_summary_in_every_observation": true
+  },
+  "observation": {
+    "static_prefix_first": true,
+    "dynamic_state_last": true,
+    "cumulative_state": "hierarchical_measured_map_v2",
+    "unvisited_value_policy": "never_expose_or_interpolate"
+  },
+  "decision_record": {
+    "required": false,
+    "replacement": "bounded_model_owned_scratchpad"
+  },
+  "neighbor_values_visible": false,
+  "temperature": 1.0
+}

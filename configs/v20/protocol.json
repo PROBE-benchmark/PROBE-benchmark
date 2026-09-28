@@ -1,0 +1,67 @@
+{
+  "schema_version": "5.0",
+  "protocol_id": "laketrace-v20-3d-single-edge-v1",
+  "condition": "static_F1",
+  "movement": {
+    "adjacency": "six_axis_aligned_native_grid",
+    "edges_per_action": 1,
+    "measure_on_arrival": true,
+    "arrival_measurement_mode": "transit",
+    "dwell_s_applied": false
+  },
+  "memory": {
+    "append_only_sample_ledger": true,
+    "exact_3d_visited_mask": true,
+    "cross_phase_averaging": false,
+    "measurement_time_name": "measurement_age_s",
+    "unvisited_value_policy": "never_expose_or_interpolate"
+  },
+  "candidate_presentation": {
+    "catalog": "public_task_union_by_domain",
+    "catalog_counts": {
+      "dahuofang": 23,
+      "donghu": 19,
+      "xingkai_large": 26,
+      "xingkai_small": 22
+    },
+    "catalog_sha256": {
+      "dahuofang": "2b80efce313077816b179f9bdebc786de59596cdd09fcb1d75e3713d0a9ad4bb",
+      "donghu": "462685f9f45dec40b2261a5f965fdcaa5a205ee3fbe74bfcdfed951d7f042ea0",
+      "xingkai_large": "1caaac442f3a5c401099c1e6f18b51d6856e9b94f4840c4c7336ad78a206ee73",
+      "xingkai_small": "9773d9b1c06c82eeb9bc8d8bdfdfb58be1a74a2420b8c3881e5dde050ed139d6"
+    },
+    "ordering": "sha256_protocol_domain_candidate",
+    "order_domain_separator": "laketrace-v20-public-candidate-order-v1",
+    "rank_has_priority": false
+  },
+  "termination": {
+    "physical_endurance_and_range_are_scientific_limits": true,
+    "provider_round_guard": 7201,
+    "submit_only_schema_retries": 3,
+    "repetition_is_diagnostic_only": true,
+    "final_submit_is_budget_free": true
+  },
+  "analysis": {
+    "physical_cost_s": 30.0,
+    "cost_basis": "registered_v4_analysis_duration",
+    "scope": "agent_measured_samples_only"
+  },
+  "sensor_noise": {
+    "flow_sigma_m_s": 0.0025,
+    "transit_multiplier": 3.0,
+    "water_quality_sigma": "detection_limit_divided_by_3",
+    "randomization": "counter_based_instance_seed_node_visit_channel_mode"
+  },
+  "decision_record": {
+    "required": true,
+    "fed_back_to_agent": false,
+    "fields": [
+      "intent",
+      "evidence_node_ids_csv",
+      "confidence",
+      "decision_note"
+    ]
+  },
+  "neighbor_values_visible": false,
+  "temperature": 1.0
+}

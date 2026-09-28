@@ -1,0 +1,324 @@
+{
+  "rule": "Common shallowest native nodes; maximize horizontal clearance from union of all positive physical release faces, source receivers and affected footprints; lexicographic XYZ tie-break. Uses truth only for benchmark initialization; no model results. One start per disconnected domain. Donghu l4-gradient-v21 replaces the remote maximally clear station with a central >10 m clear station. v22 retains all v21 stations and verifies >10 m clearance after source-strength adjustment.",
+  "parent": "/Users/xp/Documents/ChatGPT/nature water/laketrace-benchmark/data/three_waterbody_candidate_v21",
+  "choices": {
+    "dahuofang": {
+      "waterbody": "dahuofang",
+      "x": 5.0,
+      "y": -130.0,
+      "z": 1.0,
+      "minimum_horizontal_clearance_m": 44.721359549995796
+    },
+    "donghu": {
+      "waterbody": "donghu",
+      "x": 0.738,
+      "y": 1.365,
+      "z": 1.0,
+      "minimum_horizontal_clearance_m": 21.139087610396057
+    },
+    "xingkai_large": {
+      "waterbody": "xingkai",
+      "x": 102.739,
+      "y": 87.673,
+      "z": 0.5,
+      "minimum_horizontal_clearance_m": 55.82365649973138
+    },
+    "xingkai_small": {
+      "waterbody": "xingkai",
+      "x": -73.695,
+      "y": 135.855,
+      "z": 0.5,
+      "minimum_horizontal_clearance_m": 125.92259956417672
+    }
+  },
+  "checks": [
+    {
+      "instance_id": "TW-D987C88BD8C6",
+      "domain": "dahuofang",
+      "clearance_m": 117.04699910719626,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-0DBD03B93F1F",
+      "domain": "dahuofang",
+      "clearance_m": 107.70329614269008,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-9C94D8619495",
+      "domain": "dahuofang",
+      "clearance_m": 120.83045973594572,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-8D0540B809E9",
+      "domain": "dahuofang",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-F5D4D860C213",
+      "domain": "dahuofang",
+      "clearance_m": 44.721359549995796,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-37BC57F37A1C",
+      "domain": "dahuofang",
+      "clearance_m": 50.0,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-BA606662E31A",
+      "domain": "dahuofang",
+      "clearance_m": 50.0,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-4AC465145118",
+      "domain": "dahuofang",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-4AB1C6AB3B82",
+      "domain": "dahuofang",
+      "clearance_m": 111.80339887498948,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-DA219B5E007E",
+      "domain": "dahuofang",
+      "clearance_m": 102.95630140987001,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-05AFADEFAC5A",
+      "domain": "dahuofang",
+      "clearance_m": 117.04699910719626,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-0DAC4DC11333",
+      "domain": "dahuofang",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-3F040B7E2A4D",
+      "domain": "dahuofang",
+      "clearance_m": 67.08203932499369,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-C5CDB90006C9",
+      "domain": "dahuofang",
+      "clearance_m": 67.08203932499369,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-2D05BACAE426",
+      "domain": "dahuofang",
+      "clearance_m": 72.11102550927978,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-1A449D785EA7",
+      "domain": "dahuofang",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-9F1AE2240610",
+      "domain": "donghu",
+      "clearance_m": 15.711811639655053,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-3158C70D4F01",
+      "domain": "donghu",
+      "clearance_m": 11.117774057786928,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-71DCB76731A7",
+      "domain": "donghu",
+      "clearance_m": 17.940485640026584,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-D045C59BF31D",
+      "domain": "donghu",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-49A424EC8698",
+      "domain": "donghu",
+      "clearance_m": 80.29025859343088,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-28F63A57CD8A",
+      "domain": "donghu",
+      "clearance_m": 75.97055761938306,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-91C3FCE18E2A",
+      "domain": "donghu",
+      "clearance_m": 88.02956335799922,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-3FA0AEF34174",
+      "domain": "donghu",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-F42F3A923FA5",
+      "domain": "donghu",
+      "clearance_m": 54.614999999999995,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-3592F70A98DE",
+      "domain": "donghu",
+      "clearance_m": 55.522952235989756,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-D5AF9C348BDB",
+      "domain": "donghu",
+      "clearance_m": 50.647038412922036,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-3B2BEF5B7013",
+      "domain": "donghu",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-4D8D51933197",
+      "domain": "donghu",
+      "clearance_m": 15.711811639655053,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-D2A7BC329DA5",
+      "domain": "donghu",
+      "clearance_m": 19.860000000000003,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-2D5B0746E561",
+      "domain": "donghu",
+      "clearance_m": 14.895000000000001,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-C3EF2F0C08C5",
+      "domain": "donghu",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-481155803982",
+      "domain": "xingkai_large",
+      "clearance_m": 55.82365649973138,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-6DFF5320E4DE",
+      "domain": "xingkai_large",
+      "clearance_m": 109.25069153099214,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-E79E99065D01",
+      "domain": "xingkai_large",
+      "clearance_m": 123.33692431709169,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-96276A1B4D37",
+      "domain": "xingkai_large",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-0E743681E702",
+      "domain": "xingkai_large",
+      "clearance_m": 145.52552490886265,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-83EDC0485528",
+      "domain": "xingkai_large",
+      "clearance_m": 153.2648769287993,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-555B31EE4909",
+      "domain": "xingkai_large",
+      "clearance_m": 145.52552490886265,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-788E8AA55439",
+      "domain": "xingkai_large",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-B3C952DA7116",
+      "domain": "xingkai_small",
+      "clearance_m": 125.92259956417672,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-59B0E4A4AC8E",
+      "domain": "xingkai_small",
+      "clearance_m": 138.67768775473579,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-89CB8856CF4A",
+      "domain": "xingkai_small",
+      "clearance_m": 138.47258660471394,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-B21CB3AA184B",
+      "domain": "xingkai_small",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-34FBE4253A55",
+      "domain": "xingkai_small",
+      "clearance_m": 141.72797240135768,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-29ECD223B027",
+      "domain": "xingkai_small",
+      "clearance_m": 142.65004457062045,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-368514A71FF4",
+      "domain": "xingkai_small",
+      "clearance_m": 137.00867372542513,
+      "outside_source_and_affected": true
+    },
+    {
+      "instance_id": "TW-01D773B66DEC",
+      "domain": "xingkai_small",
+      "clearance_m": null,
+      "outside_source_and_affected": true
+    }
+  ]
+}

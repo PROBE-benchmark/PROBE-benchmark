@@ -1,0 +1,67 @@
+{
+  "analysis": {
+    "cost_basis": "registered_v4_analysis_duration",
+    "physical_cost_s": 30.0,
+    "scope": "agent_measured_samples_only"
+  },
+  "candidate_presentation": {
+    "catalog": "public_task_union_by_domain",
+    "catalog_counts": {
+      "dahuofang": 0,
+      "donghu": 0,
+      "xingkai_large": 0,
+      "xingkai_small": 0
+    },
+    "catalog_sha256": {
+      "dahuofang": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "donghu": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "xingkai_large": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "xingkai_small": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "order_domain_separator": "laketrace-v20-public-candidate-order-v1",
+    "ordering": "sha256_protocol_domain_candidate",
+    "rank_has_priority": false
+  },
+  "condition": "static_F1",
+  "decision_record": {
+    "fed_back_to_agent": false,
+    "fields": [
+      "intent",
+      "evidence_node_ids_csv",
+      "confidence",
+      "decision_note"
+    ],
+    "required": true
+  },
+  "memory": {
+    "append_only_sample_ledger": true,
+    "cross_phase_averaging": false,
+    "exact_3d_visited_mask": true,
+    "measurement_time_name": "measurement_age_s",
+    "unvisited_value_policy": "never_expose_or_interpolate"
+  },
+  "movement": {
+    "adjacency": "six_axis_aligned_native_grid",
+    "arrival_measurement_mode": "transit",
+    "dwell_s_applied": false,
+    "edges_per_action": 1,
+    "measure_on_arrival": true
+  },
+  "neighbor_values_visible": false,
+  "protocol_id": "laketrace-v20-3d-single-edge-v1",
+  "schema_version": "5.0",
+  "sensor_noise": {
+    "flow_sigma_m_s": 0.0025,
+    "randomization": "counter_based_instance_seed_node_visit_channel_mode",
+    "transit_multiplier": 3.0,
+    "water_quality_sigma": "detection_limit_divided_by_3"
+  },
+  "temperature": 1.0,
+  "termination": {
+    "final_submit_is_budget_free": true,
+    "physical_endurance_and_range_are_scientific_limits": true,
+    "provider_round_guard": 7201,
+    "repetition_is_diagnostic_only": true,
+    "submit_only_schema_retries": 3
+  }
+}

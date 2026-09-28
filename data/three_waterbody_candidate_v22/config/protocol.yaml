@@ -1,0 +1,24 @@
+{
+  "max_move_steps": 32,
+  "max_tool_turns": 180,
+  "sensor_noise": {
+    "flow_sigma_m_s": 0.0025,
+    "randomization": "counter_based_instance_seed_node_visit_channel_mode",
+    "transit_multiplier": 3.0,
+    "water_quality_sigma": "detection_limit_divided_by_3"
+  },
+  "tolerances": {
+    "dahuofang": {
+      "horizontal_m": 7.0,
+      "vertical_m": 1.5
+    },
+    "donghu": {
+      "horizontal_m": 7.0,
+      "vertical_m": 1.5
+    },
+    "xingkai": {
+      "horizontal_m": 7.0,
+      "vertical_m": 1.5
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "schema_version": "5.2",
+  "protocol_id": "laketrace-v20.2-resource-bounded-3d-v1",
+  "parent_protocol_id": "laketrace-v20.1-3d-axis-run-v1",
+  "physics_protocol_id": "laketrace-v20-3d-single-edge-v1",
+  "condition": "static_F1",
+  "movement": {
+    "adjacency": "six_axis_aligned_native_grid",
+    "command": "flat_direction_steps_or_boundary",
+    "min_edges_per_action": 1,
+    "max_edges_per_action": 32,
+    "measure_on_every_arrival": true,
+    "partial_prefix_on_interrupt": true
+  },
+  "resource_control": {
+    "stage_signal_allowlist": ["endurance_fraction", "provider_round_count", "known_public_price_cost"],
+    "stage_signal_denylist": ["sensor_value", "gradient", "anomaly_threshold", "candidate_distance", "score", "truth"],
+    "refine_endurance_fraction": 0.70,
+    "submit_only_endurance_fraction": 0.85,
+    "max_active_provider_rounds": 96,
+    "submit_only_schema_retries": 3,
+    "final_submission_is_budget_free": true
+  },
+  "cost_control": {
+    "currency": "CNY",
+    "input_per_million_tokens": 3.0,
+    "output_per_million_tokens": 9.0,
+    "hard_ceiling_cny": 4.0,
+    "submit_reserve_cny": 0.40,
+    "all_input_uncached_for_gate": true,
+    "score_independent": true
+  },
+  "transport": {
+    "max_retries_per_identical_request": 3,
+    "backoff_initial_s": 1.0,
+    "backoff_multiplier": 2.0,
+    "backoff_max_s": 8.0,
+    "charge_unknown_is_retained": true,
+    "episode_isolation": true
+  },
+  "analysis": {
+    "physical_cost_s": 30.0,
+    "scope": "agent_measured_samples_only",
+    "idempotent_without_new_samples": true
+  },
+  "observation": {
+    "cumulative_state": "hierarchical_measured_map_v2",
+    "last_route_measurements": "lossless_ordered_measured_only",
+    "payload_ceiling_utf8_bytes": 36000,
+    "unvisited_value_policy": "never_expose_or_interpolate"
+  },
+  "decision_record": {
+    "required": true,
+    "execution_and_audit_validity_reported_separately": true
+  },
+  "neighbor_values_visible": false,
+  "temperature": 1.0
+}
