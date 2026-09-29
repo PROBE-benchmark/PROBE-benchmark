@@ -1,35 +1,47 @@
-# PROBE research release candidate
+# PROBE benchmark
 
-This local candidate contains the interactive survey cockpit, 48 three-waterbody tasks and two observation-only source-inversion policies. It is a reproducibility candidate for author review and is not yet the published release underlying the manuscript's 31-model figures. The manuscript figure-source archive uses a different internal task/data cohort; reconcile those before publication.
+PROBE is an interactive benchmark for water-environment source tracing. A model directs a virtual survey robot through a three-dimensional water-quality field, acquires local measurements, and submits judgments about source presence, affected water, release mechanism and source location. The runner records actions, observations, reports, scores and replay checks.
 
-## Setup
+The package contains 48 fixed tasks across Sites A–C: 36 source-present tasks and 12 source-absent controls. Task fields are controlled numerical environments with site-specific background tables. The bundled evaluator truth is used only after an investigation is submitted. Because the truth is distributed with this package, these fixed tasks are a reproducibility set; new leaderboard claims require separate held-out tasks.
 
-From this directory, create a Python 3.11+ environment and install `requirements.txt`. The data root is `data/three_waterbody_candidate_v22`. All outputs must use a new directory.
+## Install
 
-## No-model smoke test
+Use Python 3.11 or newer in a virtual environment and install `requirements.txt`:
 
-`python scripts/run_three_waterbody_ade_policies.py --limit 1 --seeds 0 --output results/smoke_ade`
+```bash
+python -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+```
 
-The script executes both survey and adaptive ADE policies through the same cockpit, records actions and observations, scores them after completion, and verifies exact replay. It does not call any provider or require an API key.
+## Run an offline check
 
-## Local-model engineering check
+The two transport-based controllers use the same observation and movement interface as model investigations. This one-case check requires no model provider or API key:
 
-`python scripts/run_investigation.py --model configs/investigation/models/local_v22_survey_v6_gate3.json --instances TW-9F1AE2240610 --output results/local_gate`
+```bash
+.venv/bin/python scripts/run_three_waterbody_ade_policies.py \
+  --limit 1 --seeds 0 --output ../probe_smoke
+```
 
-The local model name and digest in its config must match an installed Ollama model. This checks execution and replay, not scientific correctness.
+The command writes separate episode traces, scores and a `summary.json` containing replay status. Use a new output directory for each run.
 
-## Paid model
+## Run a model investigation
 
-The included MiMo config is an example only. `run_investigation.py` requires a completed local engineering validation before paid execution. Enter the key through `--key-stdin`; do not commit keys or credentials.
+`scripts/run_investigation.py` accepts a model configuration, an optional list of task IDs and an output directory. First verify a local provider and its exact installed model name with the supplied local configuration. A paid-provider run requires that local validation record; credentials are read with `--key-stdin` and are not stored in the repository.
 
-## Data access
+```bash
+.venv/bin/python scripts/run_investigation.py \
+  --model configs/investigation/models/local_v22_survey_v6_gate3.json \
+  --instances TW-9F1AE2240610 --output ../probe_local_check
+```
 
-`tasks/instances.jsonl` is public task metadata; `truth/exam_truth.jsonl` is used only by the evaluator. Runtime observations are obtained via the cockpit, not by loading hidden fields into a model prompt. The 48 task fields are provided to make published results reproducible. Because the ground truth is present in this package, use a fresh held-out task set for future leaderboard claims.
+Omitting `--instances` selects all 48 tasks. To verify saved trajectories without calling a provider, run the same command with the existing output directory and `--verify-only`.
 
-## Verified control output
+## Files and interpretation
 
-`examples/actual_v22_baseline/` records the full 48-task, three-seed run of both policies on this task release; all 288 episodes passed replay. These results belong to this release only and must not be substituted for figures from another task cohort.
+- `data/three_waterbody_candidate_v22/tasks/instances.jsonl` defines the tasks; `truth/exam_truth.jsonl` is evaluator-only ground truth. Environment arrays and site background tables are in the same data directory.
+- `configs/investigation/three_waterbody_v22_survey_v6.json` defines the shared survey protocol and call allowances.
+- `laketrace/investigation/` implements the survey cockpit, provider loop, observation delivery and replay; `laketrace/scoring/` defines post-submission scoring.
+- `laketrace/baselines/` and `scripts/run_three_waterbody_ade_policies.py` implement the offline transport controllers.
+- `SHA256SUMS.txt` lists checksums for the committed package files.
 
-## Scope and release status
-
-The control policies produce L2/L4 spatial answers and do not implement L1/L3 classification. Current package licensing and data-rights confirmation are pending. Source hashes are in `SHA256SUMS.txt`.
+The repository provides the benchmark and its task fields. It does not contain model-cohort outcome tables. A benchmark score should be reported with the task manifest, runner configuration, model identifier, complete episode traces and replay status.
