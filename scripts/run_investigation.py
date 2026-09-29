@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run/replay the current development protocol. One local check precedes paid runs."""
+"""Run and replay PROBE investigations. Verify locally before paid runs."""
 from __future__ import annotations
 
 import argparse
@@ -17,7 +17,7 @@ from laketrace.investigation.runner import load_settings, manifest, run_episode,
 from laketrace.investigation.metrics import evaluate
 from laketrace.util import dump_json, stable_hash
 
-LOCAL_CASES = ["BF1-002D5D599A4D", "BF1-0187BBB3799B", "BF1-1B7012AB814D"]
+LOCAL_CASES = ["TW-D987C88BD8C6", "TW-481155803982", "TW-D045C59BF31D"]
 
 
 def validate_local(directory, expected):
@@ -48,7 +48,7 @@ def validate_local(directory, expected):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--model", default="configs/investigation/models/local_source_stable.json")
+    parser.add_argument("--model", default="configs/investigation/models/local_v22_survey_v6_gate3.json")
     parser.add_argument("--output", required=True)
     parser.add_argument("--instances", nargs="*")
     parser.add_argument("--local-cases", action="store_true")
