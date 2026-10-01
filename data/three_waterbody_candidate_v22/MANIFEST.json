@@ -168,9 +168,6 @@
     "investigation_protocol.json": "f3e3e4adf5b104c80fdce6b0d5781373b34c3857a5595d8b2810d3ce82a5f15f",
     "public_tasks.json": "f49471695843878a5e168bc9a0e7254e7d76a9836fe9508d84465335214da0de",
     "quality.csv": "e9d0cc061344d149e3234021e5e3c797efb7e152fb78f6ad42cec5199d9c41b7",
-    "scenario_design.json": "718b55b42e3ddf8200355dfcd81f29ce1358089ffbc61b5f015ae3c4b88ab7bb",
-    "source_metadata.json": "12f49bb46448e3f77c65ea7bc3234a48f2ca75aacd83baf750972cdb14e3c61c",
-    "sources.json": "76651915e5bcbe8f7e1131fa33f7cf81a35ade98588738734c7a4d1a0125176a",
     "start_selection.json": "df0eb34c24d50cc2a1ce2163ea681251bb833ea05120b138aee8c64b93c24995",
     "tasks/instances.jsonl": "19dda884e6632d3748325447c36c9b5e0df8e42de35df6a9cf6c61a68eada741",
     "truth/exam_truth.jsonl": "6b0e90cab5f208462e4f2dc3dc624e5785c4695c267dfa27c9fd501a36c00d86"

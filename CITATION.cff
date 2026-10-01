@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this repository and the exact commit used for your evaluation."
+title: "PROBE benchmark"
+type: software
+authors:
+  - family-names: Xiao
+    given-names: Peng
+  - family-names: Tao
+    given-names: Troy Yu
+repository-code: "https://github.com/PROBE-benchmark/PROBE-benchmark"
+url: "https://github.com/PROBE-benchmark/PROBE-benchmark"
+abstract: "Closed-loop water-environment investigation tasks with shared model interfaces, geometric scoring and replay."

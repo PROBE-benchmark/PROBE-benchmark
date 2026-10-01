@@ -2,7 +2,9 @@
 
 PROBE is an interactive benchmark for water-environment source tracing. A model directs a virtual survey robot through a three-dimensional water-quality field, acquires local measurements, and submits judgments about source presence, affected water, release mechanism and source location. The runner records actions, observations, reports, scores and replay checks.
 
-The package contains 48 fixed tasks across Sites A–C: 36 source-present tasks and 12 source-absent controls. Task fields are controlled numerical environments with site-specific background tables. The source archive labels its data as synthetic; field-measurement provenance has not been verified. Data origin and construction parameters are recorded in `source_metadata.json`, `sources.json` and `scenario_design.json` in the data directory. The bundled evaluator truth is used only after an investigation is submitted. These distributed tasks form a reproducibility set; new leaderboard claims require separate held-out tasks.
+The package contains 48 fixed tasks across Sites A–C: 36 source-present tasks and 12 source-absent controls. The evaluator truth is available only to the scorer during an investigation. This repository contains the task environment and execution framework; model-cohort outcome tables are distributed separately.
+
+Data provenance, field construction and usage scope are consolidated in [Data source and use statement](docs/Data_source_and_use_statement.docx), which accompanies this package. The distributed tasks are a reproducibility set; new leaderboard claims require a separate held-out evaluation.
 
 ## Install
 
@@ -44,7 +46,7 @@ Omit `--instances` to run both controllers on all 48 tasks. `--seeds 0` selects 
 
 Omitting `--instances` selects all 48 tasks. To verify saved trajectories without calling a provider, run the same command with the existing output directory and `--verify-only`.
 
-## Files and interpretation
+## Package layout
 
 - `data/three_waterbody_candidate_v22/tasks/instances.jsonl` defines the tasks; `truth/exam_truth.jsonl` is evaluator-only ground truth. Environment arrays and site background tables are in the same data directory.
 - `configs/investigation/three_waterbody_v22_survey_v6.json` defines the shared survey protocol and call allowances.
@@ -53,3 +55,24 @@ Omitting `--instances` selects all 48 tasks. To verify saved trajectories withou
 - `SHA256SUMS.txt` lists checksums for the committed package files.
 
 The repository provides the benchmark and its task fields. It does not contain model-cohort outcome tables. A benchmark score should be reported with the task manifest, runner configuration, model identifier, complete episode traces and replay status.
+
+## Connect another model
+
+The hosted adapter sends OpenAI-style chat-completion requests. Copy the supplied hosted configuration, then set `id`, `base_url`, `model`, `api_key_env`, the provider-specific thinking format and the input/output price proxy. Keep the task paths and evaluation limits fixed for a controlled comparison. Configuration field `provider: "bailian"` selects this existing hosted adapter; it is an internal adapter name, not a requirement to use that vendor.
+
+```bash
+.venv/bin/python scripts/run_investigation.py \
+  --model configs/investigation/models/mimo_v26_flash_tokenplan_v22_survey_v6_budget20.json \
+  --instances TW-9F1AE2240610 --output ../probe_hosted_check \
+  --local-validation ../probe_local_check --key-stdin
+```
+
+The example uses 20 calls and an 8,192-token output cap. Record any changed provider cap in the run configuration. API-key values and run outputs belong outside the repository. A local engineering check can finish without a scientifically correct report; inspect replay and delivery outcomes separately.
+
+## Contract tests
+
+```bash
+.venv/bin/python -m unittest discover -s tests
+```
+
+Each result directory records `scores.csv`, `summary.json`, `validation.json` and `episodes/`. Recalculate/replay with `--verify-only`; it makes no provider requests. Cite the repository commit and the task-manifest hash when reporting results.
