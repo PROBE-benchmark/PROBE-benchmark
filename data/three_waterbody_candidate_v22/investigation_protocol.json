@@ -17,7 +17,7 @@
     "L5"
   ],
   "condition": "static_unknown_source_event_controlled",
-  "dataset_role": "three_waterbody_candidate_not_formal",
+  "dataset_role": "controlled_numerical_benchmark",
   "efficient_tools": true,
   "evidence_mode": "active",
   "evidence_review": true,
@@ -25,7 +25,6 @@
   "final_report_reserve_calls": 2,
   "fit_result_schema": 2,
   "focused_report_schema": true,
-  "forecast_policy": "Model-derived values are predictions, never observations.",
   "history_turns": 6,
   "id": "laketrace-source-event-transport-1.9.3",
   "independent_levels": true,
@@ -45,7 +44,7 @@
   "query_max_bytes": 32000,
   "query_max_instructions": 2000000,
   "query_max_rows": 128,
-  "science_claim": "controlled_interventions_on_source_archive_backgrounds; provenance unresolved",
+  "science_claim": "controlled numerical interventions on source-archive backgrounds",
   "scientific_workbench": true,
   "spatial_reports": true,
   "survey_design": "boundary_depth_interleaved_v2",
@@ -66,5 +65,6 @@
   "cockpit_version": 1,
   "delivery_version": 1,
   "transport_version": 1,
-  "source_boundary_version": 1
+  "source_boundary_version": 1,
+  "prediction_policy": "Model-derived values are predictions, never observations."
 }

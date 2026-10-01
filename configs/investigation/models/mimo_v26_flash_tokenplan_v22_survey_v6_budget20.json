@@ -12,7 +12,6 @@
   "protocol_path": "configs/investigation/three_waterbody_v22_survey_v6.json",
   "provider": "bailian",
   "public_tasks_path": "data/three_waterbody_candidate_v22/public_tasks.json",
-  "purpose": "v22 predeclared weak-source load revision; v6 replay-safe cockpit, 20-call paid budget unchanged.",
   "temperature": 1.0,
   "thinking": false,
   "thinking_wire_format": "xiaomi",

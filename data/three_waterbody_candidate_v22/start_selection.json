@@ -1,6 +1,5 @@
 {
-  "rule": "Common shallowest native nodes; maximize horizontal clearance from union of all positive physical release faces, source receivers and affected footprints; lexicographic XYZ tie-break. Uses truth only for benchmark initialization; no model results. One start per disconnected domain. Donghu l4-gradient-v21 replaces the remote maximally clear station with a central >10 m clear station. v22 retains all v21 stations and verifies >10 m clearance after source-strength adjustment.",
-  "parent": "/Users/xp/Documents/ChatGPT/nature water/laketrace-benchmark/data/three_waterbody_candidate_v21",
+  "rule": "One fixed shallow navigation node per disconnected domain, outside all positive release faces and affected footprints. Site C uses the shallow point nearest the domain centroid with >10 m clearance; other domains maximize horizontal clearance. Uses evaluator truth only at benchmark initialization, not during investigations.",
   "choices": {
     "dahuofang": {
       "waterbody": "dahuofang",

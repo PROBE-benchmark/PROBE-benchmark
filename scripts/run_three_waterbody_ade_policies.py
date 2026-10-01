@@ -3,8 +3,7 @@
 
 The two policies share the same observation-only inversion. The adaptive policy
 chooses new waypoints by approximate predictive disagreement among fitted ADE
-source alternatives; this is not the dense Gaussian information planner used on
-the earlier, much smaller navigation grid. Truth is opened only after replay.
+source alternatives. Truth is opened only after replay.
 """
 import os
 for key in ("OPENBLAS_NUM_THREADS", "OMP_NUM_THREADS", "VECLIB_MAXIMUM_THREADS"):
@@ -158,15 +157,24 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--output',type=Path,required=True)
     parser.add_argument('--limit',type=int)
+    parser.add_argument('--instances',nargs='+',help='Run these task IDs, in manifest order')
     parser.add_argument('--seeds',nargs='+',type=int,default=[0,1,2])
     args = parser.parse_args()
-    output = args.output.resolve()
-    output.mkdir(parents=True,exist_ok=False)
+    if args.limit is not None and args.limit < 1:
+        parser.error('--limit must be positive')
     data_root = ROOT/'data/three_waterbody_candidate_v22'
     protocol_path = ROOT/'configs/investigation/three_waterbody_v22_survey_v6.json'
     protocol = json.loads(protocol_path.read_text())
     store = DataStore(data_root)
-    tasks = store.tasks()[:args.limit]
+    tasks = store.tasks()
+    if args.instances:
+        selected = set(args.instances)
+        if len(selected) != len(args.instances) or not selected <= {t['instance_id'] for t in tasks}:
+            parser.error('--instances requires unique known task IDs')
+        tasks = tuple(t for t in tasks if t['instance_id'] in selected)
+    tasks = tasks[:args.limit]
+    output = args.output.resolve()
+    output.mkdir(parents=True,exist_ok=False)
     save(output/'manifest.json', {
         'data_root':str(data_root), 'protocol_id':protocol['id'],
         'task_count':len(tasks), 'seeds':args.seeds,
