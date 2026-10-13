@@ -1,4 +1,4 @@
-# PROBE benchmark
+# Embodied foundation models detect transported plumes but rarely localize upstream sources
 
 PROBE evaluates model-driven water-environment investigations on 48 fixed tasks
 (36 source-present tasks and 12 controls). The agent observes local measurements,

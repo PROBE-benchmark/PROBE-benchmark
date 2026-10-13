@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "Please cite this repository and the exact commit used for your evaluation."
-title: "PROBE benchmark"
+title: "Embodied foundation models detect transported plumes but rarely localize upstream sources"
 type: software
 authors:
   - family-names: Xiao
